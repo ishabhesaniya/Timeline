@@ -1,0 +1,262 @@
+/* Global Reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+h1{
+    align-items: center;
+    text-align: center;
+}
+
+/* Button Styles */
+.add-timeline-btn {
+    padding: 1rem 2rem;
+    border: none;
+    outline: none;
+    background-color: #404040;
+    /* margin: 1rem 3rem; */
+    margin-left: 220px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    color: whitesmoke;
+    transition: all 400ms;
+}
+
+.add-timeline-btn:hover {
+    background-color: #ccc;
+    color: #404040;
+}
+
+/* Modal Container Styles */
+.form-container {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.486);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container.show {
+    display: flex;
+}
+
+/* Form Styles */
+.form {
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.494);
+    border-radius: .5rem;
+    padding: 1.5rem;
+    max-width: 400px;
+    position: relative;
+    padding-top: 2rem;
+}
+
+.form .close-btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.form .close-btn:hover {
+    color: rgb(211, 6, 64);
+}
+
+.form label {
+    width: 100%;
+    margin-block: .5rem;
+    font-weight: bold;
+}
+
+.form input,
+.form textarea {
+    width: 100%;
+    padding: .5rem;
+    margin-bottom: 10px;
+    border-radius: .5rem;
+    border: 1px solid grey;
+    outline: none;
+    overflow: hidden;
+    
+}
+.form-container .form button {
+    background-color: #0f5b30; 
+    color: black; 
+    padding: 10px 20px;
+    font-size: 18px; 
+    font-weight: bold;
+    border: none;
+    cursor: pointer; 
+    margin-top: 10px;
+    transition: background-color 0.3s; 
+}
+
+.form-container .form button:hover {
+    background-color: #03ad14; 
+}
+
+/* Image Area Styles */
+.img-area {
+    padding: .5rem;
+    border-radius: .5rem;
+    border: 1px solid grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    height: 100px;
+}
+
+.img {
+    height: 80px;
+    width: auto;
+}
+
+/* Timeline Styles */
+.timeline {
+    max-width: 90vw;
+    margin-top: 2rem;
+    padding: 1rem;
+    display: flex;
+    overflow-x: auto;
+    gap: 5px;
+}
+
+
+.timeline::-webkit-scrollbar {
+    background-color: #404040;
+}
+
+.timeline ::-webkit-scrollbar-button {
+    background-color: #ccc;
+}
+
+.timeline::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+}
+
+/* Event Styles */
+.main{
+    display: flex;
+    padding: 10px;
+    gap: 5px;
+    /* overflow: hidden; */
+}
+.event {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    overflow: hidden;
+}
+.event:nth-child(odd)>.hr {
+    height: 200px;
+}
+
+.event-img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1.5rem;
+}
+
+.year {
+    box-shadow: 0 0 10px black;
+    border-radius: .5rem;
+    padding: .5rem;
+    width: 200px;
+    text-align: center;
+    font-size: 1.25rem;
+    position: relative;
+}
+.description {
+    box-shadow: 0 0 10px black;
+    border-radius: .5rem;
+    padding: .5rem;
+    width: 200px;
+    text-align: center;
+    font-size: 1rem;
+    position: relative;
+    margin-top: 10px; 
+    overflow: hidden;/* Add some space between year and description */
+}
+
+.edit-btn,
+.remove-btn {
+    position: absolute;
+    top: 10%;
+    cursor: pointer;
+    display: none; /* Initially hidden */
+}
+
+.edit-btn {
+    right: 20%;
+}
+
+.event:hover .edit-btn {
+    display: inline-block; /* Display when event is hovered */
+}
+
+.edit-btn:hover {
+    color: rgb(8, 8, 8);
+}
+
+.remove-btn {
+    right: 5%;
+}
+
+.event:hover .remove-btn {
+    display: inline-block; /* Display when event is hovered */
+}
+
+.remove-btn:hover {
+    color: rgb(17, 17, 17);
+}
+
+
+.hr {
+    height: 50px;
+    width: 4px;
+    background-color: black;
+}
+
+.border {
+    box-shadow: 0 0 10px black;
+    border-radius: .5rem;
+    padding: .5rem;
+    width: 200px;
+}
+
+
+@media (max-width: 768px) {
+    .timeline {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .timeline {
+        padding: 0.5rem;
+    }
+}
+
